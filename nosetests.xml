@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite name="nosetests" tests="19" errors="0" failures="6" skip="0"><testcase classname="DiabolusUnitTest.TestDataAcquisition" name="test_Factory02" time="12.730"></testcase><testcase classname="DiabolusUnitTest.TestDataAcquisition" name="test_git01" time="30.211"><system-out><![CDATA[2019-07-25 17:45:56 - GitAcquisition.executeGitCommandInDirectory() - Failed execute command "git -c core.askpass=C:\Tasks\diabolus\GitAskPass.py -c http.sslVerify=false clone -b release-1.8.0 -- https://bob@srv-repositories3.lios-koeln.de/bitbucket/scm/rdpar/googletest.git C:\Tasks\diabolus\dasdasdas\googletest\source" Error: Command 'git -c core.askpass=C:\Tasks\diabolus\GitAskPass.py -c http.sslVerify=false clone -b release-1.8.0 -- https://bob@srv-repositories3.lios-koeln.de/bitbucket/scm/rdpar/googletest.git C:\Tasks\diabolus\dasdasdas\googletest\source' returned non-zero exit status 128.
+2019-07-25 17:45:56 - GitAcquisition.clone() - Failed to clone "C:\Tasks\diabolus\dasdasdas\googletest\source"
+]]></system-out></testcase><testcase classname="DiabolusUnitTest.TestDataAcquisition" name="test_nexus01" time="3.721"><system-out><![CDATA[2019-07-25 17:45:56 - NexusAcquisition().acquireSpecific() - [package3revision] server: "https://srv-repositories2.lios-koeln.de/nexus/"; repository: "ThirdPartySoftware"; componentName: "binary/Log4Qt/Log4Qt-0.3-msvc++14.12.tar.gz"
+2019-07-25 17:45:56 - NexusAcquisition().getAssetInfo() - [package3revision] assetUrl: "https://srv-repositories2.lios-koeln.de/nexus/service/rest/beta/search/assets?repository=ThirdPartySoftware&name=binary%2FLog4Qt%2FLog4Qt-0.3-msvc%2B%2B14.12.tar.gz"
+2019-07-25 17:45:56 - NexusAcquisition().getHTTPContent() - [package3revision] WARNING All SSL certificates are trusted!!!
+2019-07-25 17:45:57 - NexusAcquisition().acquireSpecific() - [package3revision] checksum local: "None"; remote: "3e0bcf38d1f59dae103fb3c390b468e5e32053b6"
+2019-07-25 17:45:57 - NexusAcquisition().acquireSpecific() - [package3revision] acquiring "https://srv-repositories2.lios-koeln.de/nexus/repository/ThirdPartySoftware/binary/Log4Qt/Log4Qt-0.3-msvc++14.12.tar.gz"
+2019-07-25 17:45:57 - NexusAcquisition().getHTTPContent() - [package3revision] WARNING All SSL certificates are trusted!!!
+2019-07-25 17:45:57 - NexusAcquisition().acquireSpecific() - [package3revision] extracting C:\Tasks\diabolus\test\Log4Qt-0.3-msvc++14.12.tar.gz
+2019-07-25 17:45:59 - NexusAcquisition().acquireSpecific() - [package3revision] cleaning "C:\Tasks\diabolus\test\package3revision\binary"
+2019-07-25 17:46:00 - NexusAcquisition().acquireSpecific() - [package3revision] moving everything from C:\Tasks\diabolus\test\_906\Log4Qt/binary to its final location C:\Tasks\diabolus\test\package3revision\binary
+2019-07-25 17:46:00 - NexusAcquisition().acquireSpecific() - [package3revision] removing temporary files 
+3e0bcf38d1f59dae103fb3c390b468e5e32053b6
+]]></system-out></testcase><testcase classname="DiabolusUnitTest.TestDataAcquisition" name="test_nexus02" time="0.019"><system-out><![CDATA[2019-07-25 17:46:00 - NexusAcquisition().acquireSpecific() - [package3revision] server: "https://srv-repositories2.lios-koeln.de/nexus/"; repository: "ThirdPartySoftware"; componentName: "binary/Log4Qt/Log4Qt-0.3-msv++14.12.tar.gz"
+2019-07-25 17:46:00 - NexusAcquisition().getAssetInfo() - [package3revision] assetUrl: "https://srv-repositories2.lios-koeln.de/nexus/service/rest/beta/search/assets?repository=ThirdPartySoftware&name=binary%2FLog4Qt%2FLog4Qt-0.3-msv%2B%2B14.12.tar.gz"
+2019-07-25 17:46:00 - NexusAcquisition().getHTTPContent() - [package3revision] WARNING All SSL certificates are trusted!!!
+2019-07-25 17:46:00 - NexusAcquisition().acquireSpecific() - [package3revision] cannot access "https://srv-repositories2.lios-koeln.de/nexus/repository/ThirdPartySoftware/binary/Log4Qt/Log4Qt-0.3-msv++14.12.tar.gz"
+]]></system-out></testcase><testcase classname="DiabolusUnitTest.TestDataClasses" name="test_datanode_findAllOfType" time="0.059"><failure type="builtins.AssertionError" message="False is not true"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 615, in run
+    testMethod()
+  File "C:\Tasks\diabolus\DiabolusUnitTest.py", line 23, in test_datanode_findAllOfType
+    self.assertTrue( len(list) == 4 )
+  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 692, in assertTrue
+    raise self.failureException(msg)
+AssertionError: False is not true
+]]></failure></testcase><testcase classname="DiabolusUnitTest.TestDataClasses" name="test_recursive_getValueInScope" time="0.002"><failure type="builtins.AssertionError" message="False is not true"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 615, in run
+    testMethod()
+  File "C:\Tasks\diabolus\DiabolusUnitTest.py", line 37, in test_recursive_getValueInScope
+    self.assertTrue( len(list) == 4 )
+  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 692, in assertTrue
+    raise self.failureException(msg)
+AssertionError: False is not true
+]]></failure></testcase><testcase classname="DiabolusUnitTest.TestDataClasses" name="test_recursive_getValueInScope2" time="0.001"><failure type="builtins.AssertionError" message="False is not true"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 615, in run
+    testMethod()
+  File "C:\Tasks\diabolus\DiabolusUnitTest.py", line 51, in test_recursive_getValueInScope2
+    self.assertTrue( len(list) == 4 )
+  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 692, in assertTrue
+    raise self.failureException(msg)
+AssertionError: False is not true
+]]></failure></testcase><testcase classname="DiabolusUnitTest.TestDataClasses" name="test_source_equals_revision_handling" time="0.038"><failure type="builtins.AssertionError" message="False is not true"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 615, in run
+    testMethod()
+  File "C:\Tasks\diabolus\DiabolusUnitTest.py", line 71, in test_source_equals_revision_handling
+    self.assertTrue( len(list) == len(expectedPreviousRevisions) )
+  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 692, in assertTrue
+    raise self.failureException(msg)
+AssertionError: False is not true
+]]></failure></testcase><testcase classname="DiabolusUnitTest.TestDiabolus" name="test_DiabolusDependsOnStatistic" time="0.002"><system-out><![CDATA[2019-07-25 17:46:00 - Updater.updateProject() - Number of packages: 3
+2019-07-25 17:46:00 - Updater.updateProject() - Category filter:    source
+2019-07-25 17:46:00 - Updater.updateProject() - Filter mode:        preferred
+2019-07-25 17:46:00 - Updater.updateProject() [test1] start
+DummyAcquisition: <DummyAcquisition.DummyAcquisition object at 0x00000211EF155AC8>
+2019-07-25 17:46:00 - Updater.updateProject() [test1] [Source: type=dummy; category=source; location=blablabla3; localOutputPath=None]
+2019-07-25 17:46:00 - Updater.updateProject() [test1] end  -Successful- 
+2019-07-25 17:46:00 - Updater.updateProject() [test2] start
+DummyAcquisition: <DummyAcquisition.DummyAcquisition object at 0x00000211EF155B00>
+2019-07-25 17:46:00 - Updater.updateProject() [test2] [Source: type=dummy; category=source; location=blablabla1; localOutputPath=None]
+2019-07-25 17:46:00 - Updater.updateProject() [test2] end  -Successful- 
+2019-07-25 17:46:00 - Updater.updateProject() [test3] start
+DummyAcquisition: <DummyAcquisition.DummyAcquisition object at 0x00000211EF155A90>
+2019-07-25 17:46:00 - Updater.updateProject() [test3] [Source: type=dummy; category=source; location=blablabla2; localOutputPath=None]
+2019-07-25 17:46:00 - Updater.updateProject() [test3] end  -Successful- 
+2019-07-25 17:46:00 - Updater.updateProject() - SUMMARY - Failed: 0; Successful: 3
+result: True
+result:  ,test1-1,test1-1:test2-2
+]]></system-out></testcase><testcase classname="DiabolusUnitTest.TestDiabolus" name="test_DiabolusNode" time="0.001"></testcase><testcase classname="DiabolusUnitTest.TestDiabolus" name="test_filterSource" time="271.934"><failure type="builtins.AssertionError" message="'python -c &quot;print(\'\')&quot;' != 'python -c &quot;print(\'1.2.3\')&quot;'&#10;- python -c &quot;print('')&quot;&#10;+ python -c &quot;print('1.2.3')&quot;&#10;?                   +++++&#10;&#10;-------------------- &gt;&gt; begin captured stdout &lt;&lt; ---------------------&#10;2019-07-25 17:46:00 - Updater.updateProject() - Number of packages: 2&#10;2019-07-25 17:46:00 - Updater.updateProject() - Category filter:    source&#10;2019-07-25 17:46:00 - Updater.updateProject() - Filter mode:        preferred&#10;2019-07-25 17:46:00 - Updater.updateProject() [googletest] start&#10;2019-07-25 17:46:12 - Updater.updateProject() [googletest] [Source: type=filesystem; category=binary; location=\\eldk-01\SOURCES\googletest\googletest-1.7.X.tgz; localOutputPath=teste]&#10;2019-07-25 17:46:12 - Updater.updateProject() [googletest] end  -Successful- &#10;2019-07-25 17:46:12 - Updater.updateProject() [zlib] start&#10;2019-07-25 17:50:32 - Updater.updateProject() [zlib] [Source: type=filesystem; category=binary; location=\\eldk-01\SOURCES\zlib\zlib-1.2.8.tar.gz; localOutputPath=teste]&#10;2019-07-25 17:50:32 - Updater.updateProject() [zlib] end  -Successful- &#10;2019-07-25 17:50:32 - Updater.runCommand() - executing: python -c &quot;print('')&quot;&#10;b'\r\n'&#10;2019-07-25 17:50:32 - Updater.updateProject() - SUMMARY - Failed: 0; Successful: 2&#10;&#10;--------------------- &gt;&gt; end captured stdout &lt;&lt; ----------------------"><![CDATA[  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 615, in run
+    testMethod()
+  File "C:\Tasks\diabolus\DiabolusUnitTest.py", line 212, in test_filterSource
+    self.assertEqual(globalPostCommand, expectedCommand)
+  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 839, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 1220, in assertMultiLineEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 680, in fail
+    raise self.failureException(msg)
+'python -c "print(\'\')"' != 'python -c "print(\'1.2.3\')"'
+- python -c "print('')"
++ python -c "print('1.2.3')"
+?                   +++++
+
+-------------------- >> begin captured stdout << ---------------------
+2019-07-25 17:46:00 - Updater.updateProject() - Number of packages: 2
+2019-07-25 17:46:00 - Updater.updateProject() - Category filter:    source
+2019-07-25 17:46:00 - Updater.updateProject() - Filter mode:        preferred
+2019-07-25 17:46:00 - Updater.updateProject() [googletest] start
+2019-07-25 17:46:12 - Updater.updateProject() [googletest] [Source: type=filesystem; category=binary; location=\\eldk-01\SOURCES\googletest\googletest-1.7.X.tgz; localOutputPath=teste]
+2019-07-25 17:46:12 - Updater.updateProject() [googletest] end  -Successful- 
+2019-07-25 17:46:12 - Updater.updateProject() [zlib] start
+2019-07-25 17:50:32 - Updater.updateProject() [zlib] [Source: type=filesystem; category=binary; location=\\eldk-01\SOURCES\zlib\zlib-1.2.8.tar.gz; localOutputPath=teste]
+2019-07-25 17:50:32 - Updater.updateProject() [zlib] end  -Successful- 
+2019-07-25 17:50:32 - Updater.runCommand() - executing: python -c "print('')"
+b'\r\n'
+2019-07-25 17:50:32 - Updater.updateProject() - SUMMARY - Failed: 0; Successful: 2
+
+--------------------- >> end captured stdout << ----------------------]]></failure><system-out><![CDATA[2019-07-25 17:46:00 - Updater.updateProject() - Number of packages: 2
+2019-07-25 17:46:00 - Updater.updateProject() - Category filter:    source
+2019-07-25 17:46:00 - Updater.updateProject() - Filter mode:        preferred
+2019-07-25 17:46:00 - Updater.updateProject() [googletest] start
+2019-07-25 17:46:12 - Updater.updateProject() [googletest] [Source: type=filesystem; category=binary; location=\\eldk-01\SOURCES\googletest\googletest-1.7.X.tgz; localOutputPath=teste]
+2019-07-25 17:46:12 - Updater.updateProject() [googletest] end  -Successful- 
+2019-07-25 17:46:12 - Updater.updateProject() [zlib] start
+2019-07-25 17:50:32 - Updater.updateProject() [zlib] [Source: type=filesystem; category=binary; location=\\eldk-01\SOURCES\zlib\zlib-1.2.8.tar.gz; localOutputPath=teste]
+2019-07-25 17:50:32 - Updater.updateProject() [zlib] end  -Successful- 
+2019-07-25 17:50:32 - Updater.runCommand() - executing: python -c "print('')"
+b'\r\n'
+2019-07-25 17:50:32 - Updater.updateProject() - SUMMARY - Failed: 0; Successful: 2
+]]></system-out></testcase><testcase classname="DiabolusUnitTest.TestDiabolus" name="test_filterSource2" time="0.001"><failure type="builtins.AssertionError" message="False is not true&#10;-------------------- &gt;&gt; begin captured stdout &lt;&lt; ---------------------&#10;2019-07-25 17:50:32 - Parser.parseFile() - Can't open file &quot;C:\Tasks\diabolus\test_filterSource2&quot;&#10;&#10;--------------------- &gt;&gt; end captured stdout &lt;&lt; ----------------------"><![CDATA[  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 615, in run
+    testMethod()
+  File "C:\Tasks\diabolus\DiabolusUnitTest.py", line 228, in test_filterSource2
+    self.assertTrue( result['noError'] )
+  File "C:\Users\avyas\AppData\Local\Continuum\anaconda3\lib\unittest\case.py", line 692, in assertTrue
+    raise self.failureException(msg)
+False is not true
+-------------------- >> begin captured stdout << ---------------------
+2019-07-25 17:50:32 - Parser.parseFile() - Can't open file "C:\Tasks\diabolus\test_filterSource2"
+
+--------------------- >> end captured stdout << ----------------------]]></failure><system-out><![CDATA[2019-07-25 17:50:32 - Parser.parseFile() - Can't open file "C:\Tasks\diabolus\test_filterSource2"
+]]></system-out></testcase><testcase classname="DiabolusUnitTest.TestDiabolus" name="test_filterSourceFilterModeSelected" time="6.663"><system-out><![CDATA[2019-07-25 17:50:32 - Updater.updateProject() - Number of packages: 1
+2019-07-25 17:50:32 - Updater.updateProject() - Category filter:    source
+2019-07-25 17:50:32 - Updater.updateProject() - Filter mode:        preferred
+2019-07-25 17:50:32 - Updater.updateProject() [zlib] start
+2019-07-25 17:50:39 - Updater.updateProject() [zlib] [Source: type=filesystem; category=binary; location=\\eldk-01\SOURCES\zlib\zlib-1.2.8.tar.gz; localOutputPath=teste]
+2019-07-25 17:50:39 - Updater.updateProject() [zlib] end  -Successful- 
+2019-07-25 17:50:39 - Updater.runCommand() - executing: python -c "print('')"
+b'\r\n'
+2019-07-25 17:50:39 - Updater.updateProject() - SUMMARY - Failed: 0; Successful: 1
+]]></system-out></testcase><testcase classname="DiabolusUnitTest.TestParser" name="test_Basic" time="0.013"></testcase><testcase classname="DiabolusUnitTest.TestPreprocessor" name="test_error" time="0.002"><system-out><![CDATA[2019-07-25 17:50:39 - Preprocessor.preprocessDataNodes() - Error - Can't pre-process nodes that have their own preprocessor.
+]]></system-out></testcase><testcase classname="DiabolusUnitTest.TestPreprocessor" name="test_upper" time="0.003"></testcase><testcase classname="DiabolusUnitTest.TestWriter" name="test_notEquals" time="0.025"></testcase><testcase classname="DiabolusUnitTest.TestWriter" name="test_simple01" time="0.008"></testcase><testcase classname="DiabolusUnitTest.TestWriter" name="test_simple02" time="0.016"></testcase></testsuite>
