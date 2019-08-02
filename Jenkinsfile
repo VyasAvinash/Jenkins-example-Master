@@ -28,5 +28,10 @@ pipeline {
                 }
             }
         }
+        stage("Post build actions") {
+            steps {
+                junit 'nosetests.xml'
+            }
+		}
     }
 }
