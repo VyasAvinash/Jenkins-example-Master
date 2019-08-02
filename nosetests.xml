@@ -3,7 +3,7 @@
 ]]></system-out></testcase><testcase classname="DiabolusUnitTest.TestDataAcquisition" name="test_nexus01" time="3.721"><system-out><![CDATA[2019-07-25 17:45:56 - NexusAcquisition().acquireSpecific() - [package3revision] server: "https://srv-repositories2.lios-koeln.de/nexus/"; repository: "ThirdPartySoftware"; componentName: "binary/Log4Qt/Log4Qt-0.3-msvc++14.12.tar.gz"
 2019-07-25 17:45:56 - NexusAcquisition().getAssetInfo() - [package3revision] assetUrl: "https://srv-repositories2.lios-koeln.de/nexus/service/rest/beta/search/assets?repository=ThirdPartySoftware&name=binary%2FLog4Qt%2FLog4Qt-0.3-msvc%2B%2B14.12.tar.gz"
 2019-07-25 17:45:56 - NexusAcquisition().getHTTPContent() - [package3revision] WARNING All SSL certificates are trusted!!!
-2019-07-25 17:45:57 - NexusAcquisition().acquireSpecific() - [package3revision] checksum local: "None"; remote: "3e0bcf38d1f59dae103fb3c390b468e5e32053b6"
+2019-07-25 17:45:57 - NexusAcquisition().acquireSpecific()- [package3revision] checksum local: "None"; remote: "3e0bcf38d1f59dae103fb3c390b468e5e32053b6"
 2019-07-25 17:45:57 - NexusAcquisition().acquireSpecific() - [package3revision] acquiring "https://srv-repositories2.lios-koeln.de/nexus/repository/ThirdPartySoftware/binary/Log4Qt/Log4Qt-0.3-msvc++14.12.tar.gz"
 2019-07-25 17:45:57 - NexusAcquisition().getHTTPContent() - [package3revision] WARNING All SSL certificates are trusted!!!
 2019-07-25 17:45:57 - NexusAcquisition().acquireSpecific() - [package3revision] extracting C:\Tasks\diabolus\test\Log4Qt-0.3-msvc++14.12.tar.gz
