@@ -10,7 +10,11 @@ pipeline {
                 }
             }
         }
-
+        stage("Post build actions") {
+            steps {
+                junit 'nosetests.xml'
+            }
+	}
         stage ('Testing Stage') {
 
             steps {
@@ -28,10 +32,6 @@ pipeline {
                 }
             }
         }
-        stage("Post build actions") {
-            steps {
-                junit 'nosetests.xml'
-            }
-		}
+
     }
 }
