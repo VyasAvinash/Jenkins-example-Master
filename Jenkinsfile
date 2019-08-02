@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+	  
+	stage("Post build actions") {
+            steps {
+                junit 'nosetests.xml'
+            }
+	}
         stage ('Compile Stage') {
 
             steps {
@@ -10,11 +16,7 @@ pipeline {
                 }
             }
         }
-        stage("Post build actions") {
-            steps {
-                junit 'nosetests.xml'
-            }
-	}
+
         stage ('Testing Stage') {
 
             steps {
