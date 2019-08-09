@@ -1,14 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('checkout') {
+    stage('checking out') {
       steps {
         checkout([$class: 'GitSCM', 
-        				   branches: [[name: '*master']], 
-        				   doGenerateSubmoduleConfigurations: false, 
-        				   extensions: [[$class: 'CleanBeforeCheckout'], 
-        				[$class: 'CloneOption', depth: 0, noTags: false, reference: '', shallow: false], 
-        				[$class: 'PruneStaleBranch']]])
+                				   branches: [[name: '*master']], 
+                				   doGenerateSubmoduleConfigurations: false, 
+                				   extensions: [[$class: 'CleanBeforeCheckout'], 
+                				[$class: 'CloneOption', depth: 0, noTags: false, reference: '', shallow: false], 
+                				[$class: 'PruneStaleBranch']]])
       }
     }
   }
