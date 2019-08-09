@@ -2,6 +2,7 @@ pipeline {
     agent any
    parameters {
 		string(name: 'NAME', defaultValue: "release/4.2.20.X", description: '')
+   }
     stages {
 	  
 	    stage ("checkout") {
