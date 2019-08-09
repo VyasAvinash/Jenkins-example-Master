@@ -7,7 +7,7 @@ pipeline {
 	  
 	    stage ("checkout") {
 		    steps {
-			    script {
+
 		  checkout ([$class: 'GitSCM', 
 				   branches: [[name: '*master']], 
 				   doGenerateSubmoduleConfigurations: false, 
@@ -15,8 +15,6 @@ pipeline {
 				[$class: 'CloneOption', depth: 0, noTags: false, reference: '', shallow: false], 
 				[$class: 'PruneStaleBranch']]])
 			    }
-			
-		}
 	    }
 	    
 	    
