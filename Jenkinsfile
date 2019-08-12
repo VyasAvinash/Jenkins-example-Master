@@ -1,4 +1,3 @@
-
 pipeline {
 	options {
 		buildDiscarder(logRotator(daysToKeepStr : '10', numToKeepStr: '10')) 
@@ -10,7 +9,8 @@ pipeline {
         checkout([$class: 'GitSCM', 
         				   branches: [[name: '*master']], 
         				   doGenerateSubmoduleConfigurations: false, 
-        				   extensions: scm.extensions + [[$class: 'CleanBeforeCheckout']]])
+        				   extensions: [[$class: 'CleanCheckout']],
+        				   userRemoteConfigs: [[credentialsId: '4bda2a04-20c7-470d-ba65-2d8eed7dbbba', url: 'https://github.com/VyasAvinash/Jenkins-example-Master.git']]])
       }
     }
   }
