@@ -9,7 +9,7 @@ pipeline {
         checkout([$class: 'GitSCM', 
         				   branches: [[name: '*master']], 
         				   doGenerateSubmoduleConfigurations: false, 
-        				   extensions: [[$class: 'CleanCheckout']],
+        				   extensions: [[$class: 'CleanBeforeCheckout'], [$class: 'CloneOption', depth: 0, noTags: false, reference: '', shallow: false], [$class: 'PruneStaleBranch']],
         				   userRemoteConfigs: [[credentialsId: '4bda2a04-20c7-470d-ba65-2d8eed7dbbba', url: 'https://github.com/VyasAvinash/Jenkins-example-Master.git']]])
       }
     }
