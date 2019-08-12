@@ -10,9 +10,7 @@ pipeline {
         checkout([$class: 'GitSCM', 
         				   branches: [[name: '*master']], 
         				   doGenerateSubmoduleConfigurations: false, 
-        				   extensions: [[$class: 'CleanBeforeCheckout'], 
-        				[$class: 'CloneOption', depth: 0, noTags: false, reference: '', shallow: false], 
-        				[$class: 'PruneStaleBranch']]])
+        				   extensions: [[$class: 'CleanBeforeCheckout']]])
       }
     }
   }
