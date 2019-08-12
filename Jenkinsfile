@@ -7,7 +7,7 @@ pipeline {
     stage('checkout') {
       steps {
         checkout([$class: 'GitSCM', 
-        				   branches: [[name: '*master feature/*']], 
+        				   branches: [[name: '*master feature/* bug/*']], 
         				   doGenerateSubmoduleConfigurations: false, 
         				   extensions: [[$class: 'CleanBeforeCheckout'], [$class: 'CloneOption', depth: 2, noTags: false, reference: '', shallow: false], [$class: 'PruneStaleBranch']],
         				   userRemoteConfigs: [[credentialsId: '4bda2a04-20c7-470d-ba65-2d8eed7dbbba', url: 'https://github.com/VyasAvinash/Jenkins-example-Master.git']]])
