@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 pipeline {
 	options {
 		buildDiscarder(logRotator(daysToKeepStr : '10', numToKeepStr: '10')) 
@@ -32,6 +34,7 @@ pipeline {
 	stage ('deploy') {
 	 		steps { 
 				echo 'deployment stage' 
+				load 'a.groovy'
 			}
 	}
 
