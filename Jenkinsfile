@@ -1,7 +1,7 @@
 pipeline {
 	options {
 		buildDiscarder(logRotator(daysToKeepStr : '10', numToKeepStr: '10')) 
-
+		skipDefaultCheckout() 
 	}
   agent any
   stages {
@@ -9,8 +9,7 @@ pipeline {
       steps {
         checkout([$class: 'GitSCM', 
         				   branches: [[name: '*master feature/* bug/*']], 
-        				   doGenerateSubmoduleConfigurations: false, 
-        				   extensions: [[$class: 'CleanBeforeCheckout'], [$class: 'CloneOption', depth: 2, noTags: false, reference: '', shallow: false], [$class: 'PruneStaleBranch']],
+        				   doGenerateSubmoduleConfigurations: false,      				  
         				   userRemoteConfigs: [[credentialsId: '4bda2a04-20c7-470d-ba65-2d8eed7dbbba', url: 'https://github.com/VyasAvinash/Jenkins-example-Master.git']]])
       }
     }
