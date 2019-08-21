@@ -15,10 +15,12 @@ pipeline {
       }
 	post {
 		failure {
-			 echo "checkout failed"
-			 currentBuild.result = "FAILURE"
-			// error "checkout error thrown"
-			}	
+			script {
+			 	echo "checkout failed"
+				 currentBuild.result = "FAILURE"
+				// error "checkout error thrown"
+			}
+		}	
 		success {
 			echo "checkout success"
 		  }
