@@ -23,7 +23,7 @@ pipeline {
 			 	echo "checkout failed"
 				 //currentBuild.result = "FAILURE"
 				// error "checkout error thrown"
-				echo ${currentBuild.result}
+				echo "currentBuild.result"
 			}
 		}	
 		success {
