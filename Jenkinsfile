@@ -1,4 +1,11 @@
 #!/usr/bin/env groovy
+void sendEmail(String reason, String Unstable) {
+	echo '$Unstable'
+	if($Unstable = 'FIXED')
+		echo 'previous build error'
+	else 
+		echo  ' send mail' + "$reason" '
+}
 
 pipeline {
 	options {
@@ -20,10 +27,11 @@ pipeline {
 	post {
 		failure {
 			script {
-			 	echo "checkout failed"
+			 	//echo "checkout failed"
+				sendEmail("Build failed", BuildFixed)
 				 BuildFixed = "FIXED"
 				// error "checkout error thrown"
-				echo "$currentBuild.result"
+				//echo "$currentBuild.result"
 			}
 		}	
 		success {
@@ -48,10 +56,8 @@ pipeline {
 
 		failure {
 			script {
-				echo BuildFixed
-			   	if(BuildFixed != "FIXED" ) {
-			          echo "Post : Deploy Failed!"
-				}
+				sendEmail("Build failed", BuildFixed)
+				BuildFixed = "FIXED"
 			  }
 			}
 		 fixed {
@@ -73,10 +79,8 @@ pipeline {
 			  
 			  failure {
 			       script {
-				 echo BuildFixed
-				 if(BuildFixed != "FIXED" ) {
-				  	echo "Post : Deploy Failed!"
-				 }
+				sendEmail("Build failed", BuildFixed)
+				BuildFixed = "FIXED"
 			       }
 			  }
 			  fixed {
