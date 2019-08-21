@@ -21,7 +21,7 @@ pipeline {
 		failure {
 			script {
 			 	echo "checkout failed"
-				 //currentBuild.result = "FAILURE"
+				 currentBuild.result = "UNSTABLE"
 				// error "checkout error thrown"
 				echo "$currentBuild.result"
 			}
