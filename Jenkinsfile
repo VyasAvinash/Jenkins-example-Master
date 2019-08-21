@@ -4,7 +4,7 @@ void sendEmail(String reason, String Unstable) {
 	if($Unstable == 'FIXED')
 		echo 'previous build error'
 	else 
-		echo  ' send mail" + "$reason" 
+		echo  ' send mail  $reason '
 }
 
 pipeline {
