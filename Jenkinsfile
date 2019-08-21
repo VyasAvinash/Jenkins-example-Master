@@ -17,8 +17,8 @@ pipeline {
 		failure {
 			 echo "checkout failed"
 			}		
+   	 }
     }
-
   stage ('deploy') {
 	 steps { 
 		echo 'deployment stage' 
