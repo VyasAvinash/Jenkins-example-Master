@@ -40,6 +40,7 @@ pipeline {
 	 			
 					echo 'deployment stage' 
 					load 'b.groovy'
+					exit 1
 			}
 		}
    	    }
