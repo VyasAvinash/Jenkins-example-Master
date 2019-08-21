@@ -32,14 +32,18 @@ pipeline {
 	
    	 }
     }
-	stage ('deploy') {
-	 		steps { 
-				echo 'deployment stage' 
-				load 'b.groovy'
+	  
+    stage ('deploy') {
+		script {
+			if (currentBuild.result == "SUCCESS")
+	 			steps { 
+					echo 'deployment stage' 
+					load 'b.groovy'
+				}
 			}
-	}
+		}
 
-  }
+   }
   parameters {
     	string(name: 'NAME', defaultValue: 'release/4.2.20.X', description: '')
   }
