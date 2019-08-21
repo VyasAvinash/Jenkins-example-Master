@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 void sendEmail(String reason, String Unstable) {
 	echo '$Unstable'
-	if($Unstable = 'FIXED')
+	if($Unstable == 'FIXED')
 		echo 'previous build error'
 	else 
 		echo  ' send mail' + "$reason" '
