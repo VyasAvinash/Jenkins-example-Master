@@ -1,7 +1,8 @@
 #!/usr/bin/env groovy
-void sendEmail(String file) {
+void sendEmail(String file2) {
+	def file = 'scripts/ci/groovy/' + script
 	echo file
-	load 'scripts/ci/groovy/'+ file
+	load file
 
 }
 
