@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 void sendEmail(String file) {
-	echo 'scripts/ci/groovy/'+ file
+	echo 'scripts/ci/groovy/'+ $file
 
 }
 
