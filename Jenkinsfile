@@ -49,13 +49,16 @@ pipeline {
 		failure {
 			  echo "Post : Deploy Failed!"
 			}
+		 fixed {
+				  echo " fixed in deploy post"
+			  }
 	 }
 
      }
 	
 	  stage ('test') {
 		  steps {
-			  if(currentBuild.result = "SUCCESS")
+			  if(currentBuild.result = "SUCCESS") {
 			  echo "Testing stage"
 		  }
 		  post {
