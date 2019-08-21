@@ -48,6 +48,7 @@ pipeline {
 
 		failure {
 			script {
+				echo BuildFixed
 			   	if(BuildFixed != "FIXED" ) {
 			          echo "Post : Deploy Failed!"
 				}
@@ -72,6 +73,7 @@ pipeline {
 			  
 			  failure {
 			       script {
+				 echo BuildFixed
 				 if(BuildFixed != "FIXED" ) {
 				  	echo "Post : Deploy Failed!"
 				 }
