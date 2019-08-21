@@ -58,9 +58,11 @@ pipeline {
 	
 	  stage ('test') {
 		  steps {
+		      script {
 			  if(currentBuild.result == "SUCCESS") {
 				echo "Testing stage"
 			  }
+		      }
 		  }
 		  post {
 			  
