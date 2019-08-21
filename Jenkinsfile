@@ -21,7 +21,7 @@ pipeline {
 			 error "checkout error thrown"
 			}	
 		success {
-
+			echo "checkout success"
 		  }
 	
    	 }
