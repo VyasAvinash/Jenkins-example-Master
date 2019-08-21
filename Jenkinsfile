@@ -44,6 +44,7 @@ pipeline {
 		}
    	    }
      }
+  }
   
   parameters {
     	string(name: 'NAME', defaultValue: 'release/4.2.20.X', description: '')
