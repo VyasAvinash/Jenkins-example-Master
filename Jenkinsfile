@@ -21,7 +21,7 @@ pipeline {
 		failure {
 			script {
 			 	echo "checkout failed"
-				 currentBuild.result = "FIXED"
+				 BuildFixed = "FIXED"
 				// error "checkout error thrown"
 				echo "$currentBuild.result"
 			}
@@ -47,7 +47,9 @@ pipeline {
 	 post { 
 
 		failure {
+			if(BuildFixed != "FIXED" ) {
 			  echo "Post : Deploy Failed!"
+				}
 			}
 		 fixed {
 				  echo " fixed in deploy post"
@@ -67,7 +69,9 @@ pipeline {
 		  post {
 			  
 			  failure {
-				  echo "Post : Deploy Failed!"
+				 if(BuildFixed != "FIXED" ) {
+				  	echo "Post : Deploy Failed!"
+				 }
 			  }
 			  fixed {
 				  echo " fixed in test post"
