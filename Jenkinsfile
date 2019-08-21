@@ -1,10 +1,7 @@
 #!/usr/bin/env groovy
-void sendEmail(String reason, String Unstable) {
-	echo '$Unstable'
-	if($Unstable == 'FIXED')
-		echo 'previous build error'
-	else 
-		echo  ' send mail  $reason '
+void sendEmail(String file) {
+	echo 'scripts/ci/groovy/'+ file
+
 }
 
 pipeline {
@@ -21,75 +18,11 @@ pipeline {
         				   doGenerateSubmoduleConfigurations: false,      				  
         				   userRemoteConfigs: [[credentialsId: '4bda2a04-20c7-470d-ba65-2d8eed7dbbba', url: 'https://github.com/VyasAvinash/Jenkins-example-Master.git']]])
 	script {
-	      currentBuild.result = "FAILURE"
+	     sendEmail(abc.groovy)
 	 }
       }
-	post {
-		failure {
-			script {
-			 	//echo "checkout failed"
-				sendEmail("Build failed", $BuildFixed)
-				 BuildFixed = "FIXED"
-				// error "checkout error thrown"
-				//echo "$currentBuild.result"
-			}
-		}	
-		success {
-			echo "checkout success"
-		  }
-	
-   	 }
     }
-	  
-    stage ('deploy') {
-	    steps {
-		script {
-			if (currentBuild.result == "SUCCESS") {
-	 			
-					echo 'deployment stage' 
-					load 'b.groovy'
-					
-			} 		     
-		}
-   	    }
-	 post { 
-
-		failure {
-			script {
-				sendEmail("Build failed", $BuildFixed)
-				BuildFixed = "FIXED"
-			  }
-			}
-		 fixed {
-				  echo " fixed in deploy post"
-			  }
-	 }
-
-     }
-	
-	  stage ('test') {
-		  steps {
-		      script {
-			  if(currentBuild.result == "SUCCESS") {
-				echo "Testing stage"
-			  }
-		      }
-		  }
-		  post {
-			  
-			  failure {
-			       script {
-				sendEmail("Build failed", $BuildFixed)
-				BuildFixed = "FIXED"
-			       }
-			  }
-			  fixed {
-				  echo " fixed in test post"
-			  }
-		  }
-	  }
-	  
-	
+	  	
   }
   
   parameters {
