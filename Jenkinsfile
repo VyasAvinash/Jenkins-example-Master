@@ -11,7 +11,7 @@ pipeline {
         				   branches: [[name: '*master feature/* bug/*']], 
         				   doGenerateSubmoduleConfigurations: false,      				  
         				   userRemoteConfigs: [[credentialsId: '4bda2a04-20c7-470d-ba65-2d8eed7dbbba', url: 'https://github.com/VyasAvinash/Jenkins-example-Master.git']]])
-
+	 currentBuild.result = "FAILURE"
       }
 	post {
 		failure {
