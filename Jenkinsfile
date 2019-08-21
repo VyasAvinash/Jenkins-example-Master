@@ -43,7 +43,15 @@ pipeline {
 			}
 		}
    	    }
+	 post { 
+
+		failure {
+			  echo "Post : Deploy Failed!"
+			}
+	 }
+
      }
+	
   }
   
   parameters {
