@@ -21,7 +21,7 @@ pipeline {
 		failure {
 			script {
 			 	echo "checkout failed"
-				 currentBuild.result = "UNSTABLE"
+				 currentBuild.result = "FIXED"
 				// error "checkout error thrown"
 				echo "$currentBuild.result"
 			}
@@ -41,10 +41,7 @@ pipeline {
 					echo 'deployment stage' 
 					load 'b.groovy'
 					
-			} else {
-				exit 1
-			}
-		     
+			} 		     
 		}
    	    }
 	 post { 
@@ -55,6 +52,23 @@ pipeline {
 	 }
 
      }
+	
+	  stage ('test') {
+		  steps {
+			  if(currentBuild.result = "SUCCESS")
+			  echo "Testing stage"
+		  }
+		  post {
+			  
+			  failure {
+				  echo "Post : Deploy Failed!"
+			  }
+			  fixed {
+				  echo " fixed in test post"
+			  }
+		  }
+	  }
+	  
 	
   }
   
