@@ -34,6 +34,7 @@ pipeline {
     }
 	  
     stage ('deploy') {
+	    step {
 		script {
 			if (currentBuild.result == "SUCCESS")
 	 			steps { 
@@ -42,8 +43,9 @@ pipeline {
 				}
 			}
 		}
-
-   }
+   	    }
+     }
+  }
   parameters {
     	string(name: 'NAME', defaultValue: 'release/4.2.20.X', description: '')
   }
