@@ -28,7 +28,7 @@ pipeline {
 		failure {
 			script {
 			 	//echo "checkout failed"
-				sendEmail("Build failed", BuildFixed)
+				sendEmail("Build failed", $BuildFixed)
 				 BuildFixed = "FIXED"
 				// error "checkout error thrown"
 				//echo "$currentBuild.result"
@@ -56,7 +56,7 @@ pipeline {
 
 		failure {
 			script {
-				sendEmail("Build failed", BuildFixed)
+				sendEmail("Build failed", $BuildFixed)
 				BuildFixed = "FIXED"
 			  }
 			}
@@ -79,7 +79,7 @@ pipeline {
 			  
 			  failure {
 			       script {
-				sendEmail("Build failed", BuildFixed)
+				sendEmail("Build failed", $BuildFixed)
 				BuildFixed = "FIXED"
 			       }
 			  }
