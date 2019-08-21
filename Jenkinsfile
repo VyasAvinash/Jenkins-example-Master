@@ -13,7 +13,7 @@ pipeline {
         				   branches: [[name: '*master feature/* bug/*']], 
         				   doGenerateSubmoduleConfigurations: false,      				  
         				   userRemoteConfigs: [[credentialsId: '4bda2a04-20c7-470d-ba65-2d8eed7dbbba', url: 'https://github.com/VyasAvinash/Jenkins-example-Master.git']]])
-	 script {
+	script {
 	      currentBuild.result = "FAILURE"
 	 }
       }
@@ -23,6 +23,7 @@ pipeline {
 			 	echo "checkout failed"
 				 //currentBuild.result = "FAILURE"
 				// error "checkout error thrown"
+				echo ${currentBuild.result}
 			}
 		}	
 		success {
