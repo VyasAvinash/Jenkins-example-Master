@@ -3,7 +3,7 @@
 pipeline {
 	options {
 		buildDiscarder(logRotator(daysToKeepStr : '10', numToKeepStr: '10')) 
-		//skipDefaultCheckout() 
+		skipDefaultCheckout() 
 	}
   agent any
   stages {
@@ -34,7 +34,7 @@ pipeline {
 	stage ('deploy') {
 	 		steps { 
 				echo 'deployment stage' 
-				load 'a.groovy'
+				load 'b.groovy'
 			}
 	}
 
