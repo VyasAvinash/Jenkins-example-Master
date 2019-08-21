@@ -18,14 +18,17 @@ pipeline {
 	post {
 		failure {
 			 echo "checkout failed"
-			}		
+			}	
+		success {
+			  stage ('deploy') {
+	 					steps { 
+							echo 'deployment stage' 
+						 }
+			 }
+		  }
    	 }
     }
-  stage ('deploy') {
-	 steps { 
-		echo 'deployment stage' 
-	 }
-	}
+
   }
   parameters {
     	string(name: 'NAME', defaultValue: 'release/4.2.20.X', description: '')
