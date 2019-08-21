@@ -18,16 +18,19 @@ pipeline {
 	post {
 		failure {
 			 echo "checkout failed"
+			 error "checkout error thrown"
 			}	
 		success {
-			  stage ('deploy') {
-	 					steps { 
-							echo 'deployment stage' 
-						 }
-			 }
+
 		  }
+	
    	 }
     }
+	stage ('deploy') {
+	 		steps { 
+				echo 'deployment stage' 
+			}
+	}
 
   }
   parameters {
