@@ -15,14 +15,18 @@ pipeline {
   stages {
 	  stage('checkout') {
       steps {
-        checkout([$class: 'GitSCM', 
-        				   branches: [[name: '*master feature/* bug/*']], 
-        				   doGenerateSubmoduleConfigurations: false,      				  
-        				   userRemoteConfigs: [[credentialsId: '4bda2a04-20c7-470d-ba65-2d8eed7dbbba', url: 'https://github.com/VyasAvinash/Jenkins-example-Master.git']]])
-	script {
-	     sendEmail("b.groovy")
+		scm checkout	
 	 }
       }
+	  stage("coverage report") {
+		  bat "cd src"
+		// 1.First merge csmes files 	(2) Combine csmes, csexe files	(3) Publish report into html format	(4) Creates a file report.html and a directory report_html
+		bat """cmmerge -o output.csmes *.csmes
+		cmcsexeimport  -m output.csmes -t Execution -e Charon4IntegrationTests.exe.csexe -e Charon4UnitTests.exe.csexe
+		cmreport -m output.csmes --html=report
+		"""
+		publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'report.html', reportName: 'Coverage report', reportTitles: ''])
+	  }
     }
 	  	
   }
