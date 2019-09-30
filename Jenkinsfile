@@ -1,5 +1,10 @@
 pipeline {
 	environment {
+		BUILD_TYPE = "Coverage"
+		BUILD = "Debug"
+		CONFIGURATION = "Win64"
+		BUILD_FOLDER = "_w64c"
+		DEBUG_COVERAGE = "_build\\bin\\${CONFIGURATION}\\${BUILD}_${BUILD_TYPE}"
 		SRC="SRC"
 		AB="AB"
 		CD="CD"
@@ -19,6 +24,7 @@ pipeline {
     }
 	  stage("coverage report") {
 	  steps {
+		  bat "echo  ${env.DEBUG_COVERAGE}"
 		  bat "cd ${SRC}\\${AB}_${CD}\\${TEMP}\\"
 		  bat ".\\a.bat"
 		
