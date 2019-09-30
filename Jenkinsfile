@@ -19,7 +19,7 @@ pipeline {
     }
 	  stage("coverage report") {
 	  steps {
-		  bat "cd ${SRC}\\{AB}_{CD}\\${TEMP}\a.bat"
+		  bat "cd ${SRC}\\${AB}_${CD}\\${TEMP}\a.bat"
 		
 	  }
     }
