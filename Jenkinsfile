@@ -1,11 +1,3 @@
-#!/usr/bin/env groovy
-void sendEmail(String file2) {
-	def file = 'scripts/ci/groovy/' + file2
-	echo file
-	load file
-
-}
-
 pipeline {
 	options {
 		buildDiscarder(logRotator(daysToKeepStr : '10', numToKeepStr: '10')) 
@@ -17,8 +9,9 @@ pipeline {
       steps {
 		scm checkout	
 	 }
-      }
+    }
 	  stage("coverage report") {
+	  steps {
 		  bat "cd src"
 		// 1.First merge csmes files 	(2) Combine csmes, csexe files	(3) Publish report into html format	(4) Creates a file report.html and a directory report_html
 		bat """cmmerge -o output.csmes *.csmes
@@ -29,9 +22,5 @@ pipeline {
 	  }
     }
 	  	
-  }
-  
-  parameters {
-    	string(name: 'NAME', defaultValue: 'release/4.2.20.X', description: '')
   }
 }
