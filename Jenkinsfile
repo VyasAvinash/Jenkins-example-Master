@@ -13,7 +13,7 @@ pipeline {
     }
 	  stage("coverage report") {
 	  steps {
-		  bat "cd src"
+		  bat "cd src\\test\\java\\Com\\techprimers\\testing"
 		
 	  }
     }
