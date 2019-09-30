@@ -7,6 +7,7 @@ pipeline {
   stages {
 	  stage('checkout') {
       steps {
+	     	bat "cocolic --license-server=srv-license1.lios-koeln.de:49344 --check"
 		checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '4bda2a04-20c7-470d-ba65-2d8eed7dbbba', url: 'https://github.com/VyasAvinash/Jenkins-example-Master.git']]])
 	 }
     }
