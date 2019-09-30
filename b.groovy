@@ -1,4 +1,5 @@
 // checking for file type
-bat """echo "this is groovy file""""
+bat "echo ${env.DEBUG_COVERAGE}.toLowerCase()
+bat """echo "thisisgroovyfile""""
 //successful
 bat "echo Avinash"
