@@ -1,4 +1,10 @@
 pipeline {
+	environment {
+		SRC="SRC"
+		AB="AB"
+		CD="CD"
+		TEMP="temp"
+	}
 	options {
 		buildDiscarder(logRotator(daysToKeepStr : '10', numToKeepStr: '10')) 
 		//skipDefaultCheckout() 
@@ -13,7 +19,7 @@ pipeline {
     }
 	  stage("coverage report") {
 	  steps {
-		  bat "cd src\\ab_cd"
+		  bat "cd ${SRC}\\{AB}_{CD}\\${TEMP}\a.bat"
 		
 	  }
     }
