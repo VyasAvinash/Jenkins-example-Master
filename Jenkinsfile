@@ -26,7 +26,7 @@ pipeline {
 	  steps {
 		  bat "echo  ${env.DEBUG_COVERAGE}"
 		  bat "cd ${SRC}\\${AB}_${CD}\\${TEMP}\\"
-		  load b.groovy
+		  load "b.groovy"
 		
 	  }
     }
