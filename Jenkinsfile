@@ -24,7 +24,7 @@ pipeline {
     }
 	  stage("coverage report") {
 	  steps {
-		  dir('${src}/$AB_$CD'){
+		  dir("${src}/${AB}_${CD}"){
 			  bat "echo yes"
 		  }
 		  bat "echo  ${env.DEBUG_COVERAGE}"
