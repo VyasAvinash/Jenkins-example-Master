@@ -24,10 +24,13 @@ pipeline {
     }
 	  stage("coverage report") {
 	  steps {
+		  dir(${src}/$AB_$CD){
+			  bat "echo yes"
+		  }
 		  bat "echo  ${env.DEBUG_COVERAGE}"
 		  bat "cd ${SRC}\\${AB}_${CD}\\${TEMP}\\"
 		  load "b.groovy"
-		
+		 
 	  }
     }
 	  	
