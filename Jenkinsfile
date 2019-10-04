@@ -24,10 +24,9 @@ pipeline {
     }
 	  stage("coverage report") {
 	  steps {
-		  dir("${src}/${AB}_${CD}"){
+		   bat """cd ${SRC}\\${AB}_${CD}
 			  publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'simple.html', reportName: 'Coverage report', reportTitles: ''])
-		  }
-		  
+		 	 """
 		  bat "echo  ${env.DEBUG_COVERAGE}"
 		  bat "cd ${SRC}\\${AB}_${CD}\\${TEMP}\\"
 		 
