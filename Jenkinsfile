@@ -30,7 +30,6 @@ pipeline {
 		  
 		  bat "echo  ${env.DEBUG_COVERAGE}"
 		  bat "cd ${SRC}\\${AB}_${CD}\\${TEMP}\\"
-		  load "b.groovy"
 		 
 	  }
     }
